@@ -1,11 +1,13 @@
-/* Variables de color - Estilo DARK MODE (Gris y Rojo) */
+/* =========================================
+   VARIABLES Y CONFIGURACIÓN (MODO OSCURO)
+   ========================================= */
 :root {
     --bg-color: #121212;       /* Gris casi negro para el fondo */
     --card-bg: #1e1e1e;        /* Gris oscuro para las tarjetas */
     --text-main: #ffffff;      /* Blanco puro para lectura clara */
     --text-muted: #a3a3a3;     /* Gris claro para textos secundarios */
     
-    /* Rojo resaltado: Un tono algo más vivo para que destaque en el oscuro */
+    /* Rojo resaltado: Inspirado en la temática de tu perfil  */
     --primary-color: #cc0000;  
     --primary-hover: #ff3333;
     --border-color: #333333;   /* Bordes sutiles */
@@ -20,21 +22,104 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
+    background-color: #000000; /* Fondo exterior Negro Puro para el efecto folio */
     color: var(--text-main);
     line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal por el menú lateral */
 }
 
-/* Contenedor principal */
+/* =========================================
+   EFECTO FOLIO Y CONTENEDORES
+   ========================================= */
+.page-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: var(--bg-color); /* El gris oscuro vuelve al interior */
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 20px rgba(204, 0, 0, 0.1);
+    overflow: hidden;
+}
+
 .container {
-    max-width: 800px; 
+    max-width: 1150px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* HERO SECTION */
+/* =========================================
+   MENÚ DE NAVEGACIÓN SUPERIOR (TABS)
+   ========================================= */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px 0;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    padding: 0;
+}
+
+.nav-tab {
+    background: transparent;
+    color: var(--text-main);
+    border: none;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.nav-tab:hover {
+    color: var(--primary-color);
+}
+
+.nav-tab.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Control de visibilidad de las pestañas */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   HERO SECTION (FOTO Y TITULAR)
+   ========================================= */
 .hero {
-    padding: 100px 0 60px;
+    padding: 60px 0 40px; /* Reducido un poco por el menú superior */
+}
+
+.hero-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.3);
 }
 
 .hero-title {
@@ -44,10 +129,9 @@ body {
     margin-bottom: 10px;
 }
 
-/* El resalte en rojo */
 .hero-title span {
     color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(204, 0, 0, 0.2); /* Sutil resplandor */
+    text-shadow: 0 0 10px rgba(204, 0, 0, 0.2);
 }
 
 .hero-subtitle {
@@ -62,21 +146,33 @@ body {
     max-width: 650px;
     margin-bottom: 30px;
     color: var(--text-muted);
+	text-align: justify;
+	hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
-/* Botones */
+.about p {
+    text-align: justify;
+	hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
 .hero-buttons {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
 }
 
+/* Botones */
 .btn {
     padding: 12px 24px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s ease;
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
 }
 
 .btn-primary {
@@ -99,10 +195,12 @@ body {
     background-color: rgba(204, 0, 0, 0.1);
 }
 
-/* SECCIONES GENERALES */
+/* =========================================
+   SECCIONES GENERALES Y SOBRE MÍ
+   ========================================= */
 section {
     padding: 50px 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: none;
 }
 
 section h3 {
@@ -113,63 +211,9 @@ section h3 {
     letter-spacing: 1px;
 }
 
-/* EXPERIENCIA */
-.job {
-    margin-bottom: 40px;
-}
-
-.job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 5px;
-}
-
-.job-header h4 {
-    font-size: 1.25rem;
-    color: var(--text-main);
-}
-
-.job-date {
-    font-size: 0.85rem;
-    color: var(--text-main);
-    font-weight: 600;
-    background-color: #2a2a2a; /* Fondo oscuro para la fecha */
-    padding: 4px 10px;
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
-}
-
-.job-company {
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 12px;
-    font-size: 1.05rem;
-}
-
-.job ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.job ul li {
-    margin-bottom: 10px;
-    color: var(--text-muted);
-    position: relative;
-    padding-left: 20px;
-}
-
-/* Viñetas personalizadas en rojo */
-.job ul li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-/* SKILLS */
+/* =========================================
+   SKILLS Y IDIOMAS
+   ========================================= */
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
@@ -184,15 +228,250 @@ section h3 {
     border-radius: 4px;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: all 0.2s ease;
 }
 
-.tag:hover {
+.skills-details summary {
+    cursor: pointer;
+    list-style: none;
+    text-align: center;
+}
+
+.skills-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.skills-details summary::after {
+    content: "▼";
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.skills-details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.hero-languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.hero-languages .language-item {
+    width: auto;
+    padding: 8px 12px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-languages .lang-name {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.hero-languages .lang-level {
+    font-size: 0.8rem;
+}
+
+.language-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+    width: 100%;
+}
+
+.language-item:hover {
     border-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.lang-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.lang-level {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   EXPERIENCIA LABORAL 
+   ========================================= */
+.job {
+    margin-bottom: 40px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.job-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #2a2a2a;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.job-company {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.job ul {
+    list-style-type: none;
+}
+
+.job ul li {
+    margin-bottom: 10px;
+    color: var(--text-muted);
+    position: relative;
+    padding-left: 20px;
+}
+
+.job ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
     color: var(--primary-color);
 }
 
-/* EDUCACIÓN Y VOLUNTARIADO (Grid) */
+/* =========================================
+   MAIN 3-COLUMN LAYOUT
+   ========================================= */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.col-title {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sticky-container {
+    position: sticky;
+    top: 30px;
+}
+
+/* =========================================
+   SCROLL ANIMATION
+   ========================================= */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+    .sticky-container {
+        position: static;
+    }
+}
+
+/* =========================================
+   OTROS TRABAJOS (DESPLEGABLE)
+   ========================================= */
+.other-jobs {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.other-jobs summary {
+    padding: 15px 0;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--primary-color);
+    transition: background-color 0.3s ease;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.other-jobs summary::-webkit-details-marker {
+    display: none;
+}
+
+.other-jobs summary::after {
+    content: "▼";
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.other-jobs[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.other-jobs summary:hover {
+    background-color: transparent; /* No background on hover to keep it clean */
+    color: var(--primary-hover);
+}
+
+.other-jobs-content {
+    padding: 20px 0 0 0; /* Only top padding */
+    border-top: 1px solid var(--border-color);
+}
+
+.other-jobs-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.other-jobs-content ul li {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    position: relative;
+    padding-left: 20px;
+}
+
+.other-jobs-content ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* =========================================
+   PROYECTOS Y FORMACIÓN (GRID)
+   ========================================= */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -204,34 +483,123 @@ section h3 {
     border: 1px solid var(--border-color);
     padding: 25px;
     border-radius: 8px;
-    transition: border-color 0.3s ease;
 }
 
-.project-card:hover {
-    border-color: var(--primary-color);
-}
-
-.project-card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: var(--primary-color);
+.project-card ul {
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .project-card ul li {
     color: var(--text-muted);
     font-size: 0.95rem;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
 }
 
-/* FOOTER */
+.project-card ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.project-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.project-card strong {
+    color: var(--primary-color);
+}
+
+.locked-card {
+    border: 1px dashed var(--border-color);
+    background-color: rgba(30, 30, 30, 0.5);
+}
+
+.flag-input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: #111;
+    color: var(--text-main);
+    width: 100%;
+    font-family: monospace;
+}
+.flag-input:focus {
+    outline: 1px solid var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* =========================================
+   SIDEBAR (MENÚ LATERAL DE PROYECTOS)
+   ========================================= */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.projects-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: var(--card-bg);
+    border-left: 2px solid var(--primary-color);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-sidebar.active {
+    right: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-project {
+    padding: 25px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-project a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* =========================================
+   FOOTER Y ADAPTABILIDAD
+   ========================================= */
 .footer {
     padding: 60px 0;
     text-align: center;
     border-top: 1px solid var(--border-color);
-}
-
-.footer p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
 }
 
 .footer-links {
@@ -239,32 +607,27 @@ section h3 {
     display: flex;
     justify-content: center;
     gap: 25px;
-    flex-wrap: wrap;
 }
 
-.footer-links a, .footer-links span {
-    color: var(--text-main);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-}
+@media (max-width: 768px) {
+    /* Quitamos el margen y borde del wrapper en móvil para aprovechar la pantalla */
+    .page-wrapper {
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+    }
 
-.footer-links a:hover {
-    color: var(--primary-color);
-}
-
-/* MEDIA QUERIES (Móviles) */
-@media (max-width: 600px) {
+    .hero-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
     .hero-title {
         font-size: 2.2rem;
     }
-    
-    .job-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .job-date {
-        margin-top: 8px;
+
+    .hero-buttons {
+        justify-content: center;
     }
 }

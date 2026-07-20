@@ -9,144 +9,421 @@
 </head>
 <body>
 
-    <header class="hero">
-        <div class="container">
-            <h1 class="hero-title">Hola, soy <span>Emilio Fito</span></h1>
-            <h2 class="hero-subtitle">Técnico Informático</h2>
-            <p class="hero-text">Perfil multidisciplinar con experiencia en desarrollo multiplataforma y hardware. Apasionado por la innovación tecnológica, la resolución de problemas técnicos, el movimiento "maker" y la comunidad Open-Hardware/Software.</p>
-            <!-- <div class="hero-buttons">
-                <a href="mailto:emiliofito@gmail.com" class="btn btn-primary">Contactar</a>
-                <a href="emilio-fito-cv.pdf" target="_blank" class="btn btn-secondary">Descargar CV (PDF)</a>
-            </div> -->
-        </div>
-    </header>
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li><button class="nav-tab" data-target="referencias-section" data-i18n="nav_ref">Referencias</button></li>
+            <li><button class="nav-tab active" data-target="cv-section" data-i18n="nav_cv">CV</button></li>
+            <li><button class="nav-tab" data-target="portfolio-section" data-i18n="nav_portfolio">Portfolio</button></li>
+        </ul>
+    </nav>
 
-    <section class="about container">
-        <h3>Sobre mí</h3>
-        <p>Actualmente cursando el Grado en Ingeniería Informática en la UJI, cuento con una sólida base como Técnico Superior en Desarrollo de Aplicaciones Multiplataforma. Mi trayectoria combina el desarrollo de software (Android, web, ERPs) con el soporte de hardware, impresión 3D y la divulgación tecnológica. Me considero una persona resolutiva, adaptable y muy involucrada en la comunidad. Mis dos principales aficiones son la ciberseguridad, donde he participado en distintas competiciones, y los videojuegos.</p>
-    </section>
-
-    <section class="skills container">
-        <h3>Tecnologías y Habilidades</h3>
-        <div class="skills-tags">
-            <span class="tag">Java</span>
-            <span class="tag">PHP</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">HTML5 & CSS</span>
-            <span class="tag">SQL</span>
-            <span class="tag">XML</span>
-            <span class="tag">Android Dev</span>
-            <span class="tag">Impresión 3D</span>
-            <span class="tag">NFC / RFID</span>
-            <span class="tag">Soporte Hardware</span>
-        </div>
-    </section>
-
-    <section class="experience container">
-        <h3>Experiencia Destacada</h3>
+    <div id="cv-section" class="tab-content active">
         
-        <div class="job">
-            <div class="job-header">
-                <h4>Técnico Informático</h4>
-                <span class="job-date">2022 - Actualidad</span>
+        <header class="hero">
+            <div class="container hero-flex">
+                <div class="hero-image-container">
+                    <img src="foto.jpg" alt="Emilio Fito" class="hero-img">
+                </div>
+                
+                <div class="hero-text-container">
+                    <h1 class="hero-title" data-i18n="hero_title">Hola, soy <span>Emilio Fito</span></h1>
+                    <h2 class="hero-subtitle" data-i18n="hero_subtitle">Pirata</h2>
+                    <div class="hero-languages">
+                        <button class="language-item" onclick="setLanguage('es')"><span class="lang-name" data-i18n="lang_es">Español</span><span class="lang-level" data-i18n="level_native">Nativo</span></button>
+                        <button class="language-item" onclick="setLanguage('ca')"><span class="lang-name" data-i18n="lang_ca">Catalán</span><span class="lang-level" data-i18n="level_native">Nativo</span></button>
+                        <button class="language-item" onclick="setLanguage('en')"><span class="lang-name" data-i18n="lang_en">Inglés</span><span class="lang-level" data-i18n="level_c1">Nivel C1</span></button>
+                        <button class="language-item" onclick="setLanguage('fr')"><span class="lang-name" data-i18n="lang_fr">Francés</span><span class="lang-level" data-i18n="level_basic">Básico</span></button>
+                        <button class="language-item" onclick="setLanguage('ru')"><span class="lang-name" data-i18n="lang_ru">Ruso</span><span class="lang-level" data-i18n="level_learning">En proceso de aprendizaje</span></button>
+                    </div>
+                </div>
             </div>
-            <p class="job-company">Hackerspace Castellón</p>
-            <ul>
-                <li>Diseño y desarrollo de aplicaciones orientadas a la informática, videojuegos y robótica.</li>
-                <li>Organización de equipos y participación en competiciones de ciberseguridad de tipo Capture the Flag (CTF).</li>
-				<li>Investigación y Desarrollo (I+D) en tecnologías NFC/RFID y servicios Cashless.</li>
-                <li>Diseño, modelado e impresión 3D de piezas técnicas.</li>
-                <li>Diagnóstico y reparación de equipos informáticos e impresoras 3D.</li>
-                <li>Planificación de eventos de divulgación científica y soporte técnico a asociaciones universitarias.</li>
-            </ul>
-        </div>
+        </header>
 
-        <div class="job">
-            <div class="job-header">
-                <h4>Profesor de Informática y Nuevas Tecnologías</h4>
-                <span class="job-date">2025 - Actualidad</span>
-            </div>
-            <p class="job-company">Asociación de Altas Capacidades de Castellón (ACAST)</p>
-            <ul>
-                <li>Formación especializada y adaptada a niños con altas capacidades en programación web, hardware y plataformas de diseño especializado.</li>
-            </ul>
-        </div>
+        <section class="about container">
+            <h3 data-i18n="about_title">Sobre mí</h3>
+            <p data-i18n="about_text">Técnico Superior en DAM, actualmente cursando el Grado en Ingeniería Informática en la UJI.<br>
+			Mi foco profesional es la ciberseguridad, ámbito en el que participo activamente en competiciones (CTFs).<br>
+			Mi trayectoria multidisciplinar me permite abordar la tecnología con una visión completa, desde el desarrollo de software y el soporte de hardware, hasta la protección de sistemas. Me considero una persona resolutiva, analítica y comprometida, aunque a veces puedo pecar de pragmático.<br>
+			Soy fiel defensor del movimiento Open Source y de la iniciativa Stop Killing Games</p>
+            <br>
+        </section>
 
-        <div class="job">
-            <div class="job-header">
-                <h4>Profesor Voluntario de Robótica</h4>
-                <span class="job-date">2023 - Actualidad</span>
-            </div>
-            <p class="job-company">CEIP Mestre Carlos Selma</p>
-            <ul>
-                <li>Realización de talleres de introducción a la robótica con niños de todos los ciclos escolares (de 3 hasta 12 años).</li>
-                <li>Formación individualizada y especializada en programación.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <h4>Staff de Soporte Tecnológico</h4>
-                <span class="job-date">2023</span>
-            </div>
-            <p class="job-company">The Music Republik</p>
-            <ul>
-                <li>Atención y resolución de incidencias in situ relacionadas con tecnologías NFC/RFID.</li>
-                <li>Gestión técnica de acreditaciones y reposición de elementos en eventos masivos.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <h4>Programador Multiplataforma</h4>
-                <span class="job-date">2019</span>
-            </div>
-            <p class="job-company">Idril Consultores S.L.</p>
-            <ul>
-                <li>Desarrollo de aplicaciones móviles para Android.</li>
-                <li>Diseño y desarrollo de interfaces y herramientas para ERPs del sector transporte.</li>
-                <li>Programación Full Stack utilizando PHP, Java, JavaScript, HTML5, CSS, XML y SQL.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="education-volunteering container">
-        <h3>Formación y Voluntariado</h3>
-        <div class="projects-grid">
+        <section class="main-layout container">
             
-            <div class="project-card">
-                <h4>Formación Académica</h4>
-                <ul>
-                    <li><strong>Grado en Ingeniería Informática</strong><br>Universidad Jaume I (2021-Actualidad)</li>
-                    <li style="margin-top:10px;"><strong>CFGS Desarrollo de Aplicaciones Multiplataforma</strong><br>Progresa CIF (2017-2019)</li>
-                </ul>
+            <!-- Left Column: Formación Académica -->
+            <div class="side-col col-left scroll-animate">
+                <div class="sticky-container">
+                    <h4 data-i18n="edu_academic" class="col-title">Formación Académica</h4>
+                    <div class="project-card">
+                        <ul>
+                            <p><strong>Universitat Jaume I</strong></p>
+                            <li style="margin-top:10px;" data-i18n="edu_degree">Grado en Ingeniería Informática con intensificación en Ingeniería de Computadores</li>
+                        </ul>
+                        <ul style="margin-top: 15px;">
+                            <p><strong>Progresa Centro Integrado de Formación</strong></p>
+                            <li style="margin-top:10px;" data-i18n="edu_cfgs">CFGS Desarrollo de Aplicaciones Multiplataforma</li>
+                        </ul>
+                    </div>
+
+                    <h4 data-i18n="cert_title" class="col-title" style="margin-top: 30px;">Otras titulaciones</h4>
+                    <div class="project-card">
+                        <ul>
+                            <li style="margin-bottom: 8px;" data-i18n="cert_1">Permisos de circulación:<br>
+							B, AM, A1, A2</li>
+                            <!--<li style="margin-bottom: 8px;" data-i18n="cert_2">Patrón de Embarcaciones de Recreo (PER)</li> -->
+                            <!--<li style="margin-bottom: 8px;" data-i18n="cert_3">Licencia F de armas</li> -->
+                        </ul>
+                    </div>
+
+                    <h4 data-i18n="hobbies_title" class="col-title" style="margin-top: 30px;">Aficiones</h4>
+                    <div class="project-card">
+                        <ul>
+                            <li style="margin-bottom: 8px;" data-i18n="hobby_1">Videojuegos</li>
+							<li style="margin-bottom: 8px;" data-i18n="hobby_2">Escalada</li>
+                            <!--<li style="margin-bottom: 8px;" data-i18n="hobby_3">Esgrima</li> -->
+                            <!--<li style="margin-bottom: 8px;" data-i18n="hobby_4">Tiro Olímpico</li> -->
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="project-card">
-                <h4>Voluntariado Tecnológico</h4>
-                <p><strong>Universitat Jaume I</strong></p>
-                <ul>
-                    <li>Formación de la comunidad universitaria, incluyendo alumnado SAUJI, mediante cursos y talleres en <strong>Ciberseguridad</strong>.</li>
-                </ul>
-                <p style="margin-top: 15px;"><strong>Cáritas</strong></p>
-                <ul>
-                    <li>Profesor de informática básica para adolescentes en riesgo de exclusión social.</li>
-                </ul>
+            <!-- Center Column: Experiencia Profesional -->
+            <div class="center-col scroll-animate" style="transition-delay: 0.2s;">
+                <h3 data-i18n="exp_title" class="col-title" style="text-align: center;">Experiencia profesional</h3>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <h4 data-i18n="job1_title">Técnico Informático</h4>
+                        <span class="job-date" data-i18n="job1_date">2022 - Actualidad</span>
+                    </div>
+                    <p class="job-company">Hackerspace Castellón</p>
+                    <ul>
+                        <li data-i18n="job1_l1">Diseño y desarrollo de aplicaciones orientadas a la informática, videojuegos y robótica.</li>
+                        <li data-i18n="job1_l2">Organización de equipos y participación en competiciones de ciberseguridad de tipo Capture the Flag (CTF).</li>
+                        <li data-i18n="job1_l3">Investigación y Desarrollo (I+D) en tecnologías NFC/RFID y servicios Cashless.</li>
+                        <li data-i18n="job1_l4">Diseño, modelado e impresión 3D de piezas técnicas.</li>
+                        <li data-i18n="job1_l5">Diagnóstico y reparación de equipos informáticos e impresoras 3D.</li>
+                        <li data-i18n="job1_l6">Planificación de eventos de divulgación científica y soporte técnico a asociaciones universitarias.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <h4 data-i18n="job2_title">Profesor de Informática y Nuevas Tecnologías</h4>
+                        <span class="job-date" data-i18n="job2_date">2025 - Actualidad</span>
+                    </div>
+                    <p class="job-company">Asociación de Altas Capacidades de Castellón (ACAST)</p>
+                    <ul>
+                        <li data-i18n="job2_l1">Formación especializada y adaptada a niños con altas capacidades en programación web, hardware y platforms de diseño especializado.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <h4 data-i18n="job3_title">Profesor Voluntario de Informática y Robótica</h4>
+                        <span class="job-date" data-i18n="job3_date">2023 - Actualidad</span>
+                    </div>
+                    <p class="job-company">CEIP Mestre Carlos Selma</p>
+                    <ul>
+                        <li data-i18n="job3_l1">Realización de talleres de introducción a la robótica con niños de todos los ciclos escolares (de 3 hasta 12 años).</li>
+                        <li data-i18n="job3_l2">Formación individualizada y especializada en programación de SW y HW.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <h4 data-i18n="job4_title">Staff de Soporte Tecnológico</h4>
+                        <span class="job-date">2023</span>
+                    </div>
+                    <p class="job-company">The Music Republik</p>
+                    <ul>
+                        <li data-i18n="job4_l1">Atención y resolución de incidencias in situ relacionadas con tecnologías NFC/RFID.</li>
+                        <li data-i18n="job4_l2">Gestión técnica de acreditaciones y reposición de elementos en eventos masivos.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <h4 data-i18n="job5_title">Programador Multiplataforma</h4>
+                        <span class="job-date">2019</span>
+                    </div>
+                    <p class="job-company">Idril Consultores S.L.</p>
+                    <ul>
+                        <li data-i18n="job5_l1">Desarrollo de aplicaciones móviles para Android.</li>
+                        <li data-i18n="job5_l2">Diseño y desarrollo de interfaces y herramientas para ERPs del sector transporte.</li>
+                        <li data-i18n="job5_l3">Programación Full Stack utilizando PHP, Java, JavaScript, HTML5, CSS, XML y SQL.</li>
+                    </ul>
+                </div>
+                
+                <details class="other-jobs">
+                    <summary data-i18n="other_jobs_title">Otros trabajos no relacionados con la informática</summary>
+                    <div class="other-jobs-content">
+                        
+                        <div class="job">
+                            <div class="job-header">
+                                <h4 data-i18n="ojob1_title">Gerente de tienda</h4>
+                                <span class="job-date">2024 - 2026</span>
+                            </div>
+                            <p class="job-company">Mercadona</p>
+                            <ul>
+                                <li data-i18n="ojob1_l1">Recibir latigazos.</li>
+                            </ul>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <h4 data-i18n="ojob_acciona_title">Operario de motos eléctricas</h4>
+                                <span class="job-date">2021 - 2022</span>
+                            </div>
+                            <p class="job-company">ACCIONA MOBILITY</p>
+                            <ul>
+                                <li data-i18n="ojob_acciona_l1">Peritaje, resolución y comunicación de incidencias.</li>
+                                <li data-i18n="ojob_acciona_l2">Reparación y mantenimiento in situ de las motos eléctricas.</li>
+                                <li data-i18n="ojob_acciona_l3">Manipulación de electrónica y microelectrónica de vehículos incluyendo baterías.</li>
+                                <li data-i18n="ojob_acciona_l4">Reposición de elementos consumibles y limpieza de los vehículos.</li>
+                                <li data-i18n="ojob_acciona_l5">Conducción de motos eléctricas y de furgoneta de reparto.</li>
+                                <li data-i18n="ojob_acciona_l6">Traslado periódico de motocicletas por medio de vehículos de gran volumen (+3500 Kg.)</li>
+                                <li data-i18n="ojob_acciona_l7">Uso de aplicaciones informáticas.</li>
+                            </ul>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <h4 data-i18n="ojob2_title">Técnico de montaje</h4>
+                                <span class="job-date">2014 - 2018</span>
+                            </div>
+                            <p class="job-company">Escena Gandia</p>
+                            <ul>
+                                <li data-i18n="ojob2_l1">Carga y descarga de material audiovisual y estructuras de carga.</li>
+                                <li data-i18n="ojob2_l2">Montaje y manipulación de material audiovisual y estructuras de carga.</li>
+                            </ul>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <h4 data-i18n="ojob3_title">Camarero</h4>
+                                <span class="job-date">2017</span>
+                            </div>
+                            <p class="job-company">Cervecería Caramelo</p>
+                            <ul>
+                                <li data-i18n="ojob3_l1">Atención al cliente en barra y en sala.</li>
+                            </ul>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <h4 data-i18n="ojob4_title">Socorrista de piscina</h4>
+                                <span class="job-date">2013 - 2017</span>
+                            </div>
+                            <p class="job-company"><span data-i18n="ojob4_company_desc">Comunidad de propietarios</span> Universidad del Mar</p>
+                            <ul>
+                                <li data-i18n="ojob4_l1">Socorrista acuático en piscina.</li>
+                                <li data-i18n="ojob4_l2">Encargado del mantenimiento de la calidad del agua, del recinto de la piscina y pista deportiva.</li>
+                                <li data-i18n="ojob4_l3">Jardinero.</li>
+                                <li data-i18n="ojob4_l4">Controlador de acceso al recinto de la piscina.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </details>
+            </div>
+
+            <!-- Right Column: Voluntariado -->
+            <div class="side-col col-right scroll-animate" style="transition-delay: 0.4s;">
+                <div class="sticky-container">
+                    <h4 data-i18n="edu_vol" class="col-title">Voluntariado</h4>
+                    <div class="project-card">
+                        <p><strong>Universitat Jaume I</strong></p>
+                        <ul>
+                            <li data-i18n="vol_uji">Formación de la comunidad universitaria, incluyendo alumnado SAUJI, mediante cursos y talleres en <strong>Ciberseguridad</strong>.</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Cáritas</strong></p>
+                        <ul>
+                            <li data-i18n="vol_caritas">Profesor de informática básica para adolescentes en riesgo de exclusión social.</li>
+                        </ul>
+                        
+                        <details class="other-jobs" style="margin-top: 20px;">
+                            <summary data-i18n="vol_other_title" style="padding: 10px 0; font-size: 0.95rem;">Voluntariado no tecnológico</summary>
+                            <div class="other-jobs-content" style="padding-top: 10px;">
+                                <div class="job" style="margin-bottom: 20px;">
+                                    <p class="job-company" style="margin-bottom: 5px;">Universitat Jaume I</p>
+                                    <ul>
+                                        <li data-i18n="vol_uji_pisos">Voluntario en el <a href="https://www.uji.es/serveis/ocds/base/allotja-sol/pisossolidaris/" target="_blank" style="color: var(--primary-color);">Programa Pisos Solidarios</a> en la Oficina de Cooperación al Desarrollo y Solidaridad (OCDS) de la UJI.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="job" style="margin-bottom: 0;">
+                                    <p class="job-company" style="margin-bottom: 5px;">Cruz Roja</p>
+                                    <ul>
+                                        <li data-i18n="vol_cruzroja">Atención y distribución de recursos de primera necesidad para personas en alto riesgo de exclusión social.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 
+        <section class="skills container scroll-animate">
+            <details class="skills-details">
+                <summary><h3 data-i18n="skills_title" style="display: inline-block; margin: 0;">Tecnologías y Habilidades</h3></summary>
+                <div class="skills-tags" style="justify-content: center; margin-top: 25px;">
+                    <span class="tag">Java</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Android Dev</span>
+                    <span class="tag">XML</span>
+                    <span class="tag">HTML5 & CSS</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag" data-i18n="skill_3d">Impresión 3D</span>
+                    <span class="tag">C, C# y C++</span>
+                    <span class="tag">Arduino</span>
+                    <span class="tag" data-i18n="skill_nfc">Tecnologías NFC/RFID</span>
+                    <span class="tag" data-i18n="skill_hw">Soporte Hardware</span>
+                </div>
+            </details>
+            <br>
+        </section>
+        -->
+
+    </div> <div id="portfolio-section" class="tab-content">
+        <div class="container" style="padding: 100px 20px; text-align: center;">
+            <h3 style="color: var(--primary-color);" data-i18n="port_title">Aquí voy subiendo mis proyectos</h3>
+            
+            <div class="projects-grid" style="margin-top: 40px; text-align: left;">
+                
+                <!-- Caja 1 -->
+                <div class="project-card locked-card" id="card-carro">
+                    <h4 data-i18n="port_proj1_title">Haciendo la compra más fácil</h4>
+                    <div class="locked-content">
+                        <p style="margin-bottom: 15px;" data-i18n="port_locked_msg">Este proyecto está bloqueado. Introduce la flag para acceder.</p>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="flag-input" placeholder="flag{...}" id="flag-carro">
+                            <button class="btn btn-primary" onclick="checkFlag('carro')" style="padding: 10px;" data-i18n="port_unlock_btn">Desbloquear</button>
+                        </div>
+                    </div>
+                    <div class="unlocked-content" style="display: none;">
+                        <p data-i18n="port_unlocked_msg">Contenido desbloqueado (vacío de momento).</p>
+                    </div>
+                </div>
+
+                <!-- Caja 2 -->
+                <div class="project-card locked-card" id="card-transporte">
+                    <h4 data-i18n="port_proj2_title">Transporte verdaderamente público</h4>
+                    <div class="locked-content">
+                        <p style="margin-bottom: 15px;" data-i18n="port_locked_msg">Este proyecto está bloqueado. Introduce la flag para acceder.</p>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="flag-input" placeholder="flag{...}" id="flag-transporte">
+                            <button class="btn btn-primary" onclick="checkFlag('transporte')" style="padding: 10px;" data-i18n="port_unlock_btn">Desbloquear</button>
+                        </div>
+                    </div>
+                    <div class="unlocked-content" style="display: none;">
+                        <p data-i18n="port_unlocked_msg">Contenido desbloqueado (vacío de momento).</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="referencias-section" class="tab-content">
+        <div class="container" style="padding: 100px 20px; text-align: center;">
+            <h3 style="color: var(--primary-color);" data-i18n="ref_title">Esta gente te hablará sobre mi (espero que bien)</h3>
+            
+            <div class="projects-grid" style="margin-top: 40px; text-align: left;">
+                
+                <!-- Tarjeta Hackerspace -->
+                <div class="project-card">
+                    <div style="text-align: center; margin-bottom: 20px; min-height: 100px; display: flex; align-items: center; justify-content: center;">
+                        <img src="hackCS.png" alt="Hackerspace" style="max-height: 100px; max-width: 100%; border-radius: 8px;">
+                    </div>
+                    <h4 style="text-align: center;">Hackerspace</h4>
+                    <ul style="margin-top: 20px;">
+                        <li><span data-i18n="ref_contact">Contacto:</span> Pablo</li>
+                        <li><span data-i18n="ref_email">Email:</span> <a href="mailto:hackCS@hackCS.org" style="color: var(--primary-color); text-decoration: none;">hackCS@hackCS.org</a></li>
+						<li><span data-i18n="ref_web">Web:</span> <a href="https://hackcs.uji.es/es/" target="_blank" style="color: var(--text-main); text-decoration: none;">https://hackcs.uji.es/es/</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tarjeta CEIP Mestre Carlos Selma -->
+                <div class="project-card">
+                    <div style="text-align: center; margin-bottom: 20px; min-height: 100px; display: flex; align-items: center; justify-content: center;">
+                        <img src="mcs.png" alt="CEIP Mestre Carlos Selma" style="max-height: 100px; max-width: 100%; border-radius: 8px;">
+                    </div>
+                    <h4 style="text-align: center;">CEIP Mestre Carlos Selma</h4>
+                    <ul style="margin-top: 20px;">
+                        <li><span data-i18n="ref_contact">Contacto:</span> Javier</li>
+                        <li><span data-i18n="ref_email">Email:</span> <a href="mailto:12001502@edu.gva.es" style="color: var(--primary-color); text-decoration: none;">12001502@edu.gva.es</a></li>
+						<li><span data-i18n="ref_web">Web:</span> <a href="https://portal.edu.gva.es/maestrocarlosselma/" target="_blank" style="color: var(--text-main); text-decoration: none;">portal.edu.gva.es/maestrocarlosselma/</a></li>
+                    </ul>
+                </div>
+
             </div>
 
         </div>
-    </section>
+    </div>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Emilio Fito. Castellón de la Plana.</p>
+            <p>&copy; 2026 Emilio Fito - Castellón de la Plana.</p>
             <div class="footer-links">
+				<a href="https://github.com/Faa5nu" target="_blank">GitHub</a>
                 <a href="https://linkedin.com/in/emilio-fito" target="_blank">LinkedIn</a>
-                <a href="mailto:emiliofito@gmail.com">emiliofito@gmail.com</a>
+                <a href="mailto:faasnu@hackcs.com">faasnu@hackcs.com</a>
                 <span>(+34) 695038800</span>
             </div>
         </div>
     </footer>
 
+    <script src="translations.js"></script>
+    <script>
+        const navTabs = document.querySelectorAll('.nav-tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        navTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                navTabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                const targetId = tab.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        // Scroll Animation Observer
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.scroll-animate').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // CTF Flag checker
+        function checkFlag(cardId) {
+            const input = document.getElementById('flag-' + cardId).value;
+            if (input.trim() === 'flag{h3ll0_fr13nd}') {
+                const card = document.getElementById('card-' + cardId);
+                card.querySelector('.locked-content').style.display = 'none';
+                card.querySelector('.unlocked-content').style.display = 'block';
+                card.classList.remove('locked-card');
+                card.style.borderColor = 'var(--primary-color)';
+            } else {
+                alert('Flag incorrecta');
+            }
+        }
+    </script>
 </body>
 </html>
