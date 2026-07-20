@@ -361,7 +361,7 @@ section h3 {
    ========================================= */
 .main-layout {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 3fr 7fr;
     gap: 30px;
     align-items: start;
 }
@@ -374,6 +374,7 @@ section h3 {
     padding-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .sticky-container {
